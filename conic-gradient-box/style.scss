@@ -1,0 +1,85 @@
+$conic_color: conic-gradient(transparent,transparent,transparent,#E1EE32);
+$background_color: linear-gradient(45deg, #00BCB4 , #C4E86B);
+$timimg1: 3s;
+$delay: -1.5s;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+     background: linear-gradient(140deg, #FF7D58 , #FFCC4B);
+}
+
+.box{
+    position: relative;
+
+    width: 500px;
+    height: 600px;
+    border-radius: 25px;
+    background: $background_color;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+
+    &::before{
+        position: absolute;
+        content: '';
+        width: 800px;
+        height: 900px;
+        background: $conic_color;
+    
+        animation: animate $timimg1 linear infinite;
+    }
+
+    &::after{
+        position: absolute;
+        content: '';
+        width: 800px;
+        height: 900px;
+        background: $conic_color;
+    
+        animation: animate $timimg1 linear infinite;
+        animation-delay: $delay;
+    }
+
+    span{
+        position: absolute;
+        background: $background_color;
+        inset: 10px;
+        border-radius: 25px;
+        z-index: 1;
+
+        // border-style: 1px solid transparent;
+        
+        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+        h2{
+            position: relative;
+        }
+    }
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
