@@ -17,53 +17,53 @@
 
         <div class="nav">
             <ul>
-                <li id="aa">
-                    <a>
+                <li sourceHTML="homa.html">
+                    <div>
                         <i class="fa-solid fa-building"></i>
                         <span class="title">Brand Name</span>
-                    </a>
+                    </div>
                 </li>
-                <li>
-                    <a href="">
+                <li sourceHTML="">
+                    <div>
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="title">Dashboard</span>
-                    </a>
+                    </div>
                 </li>
-                <li>
-                    <a href="">
+                <li sourceHTML="">
+                    <div>
                         <i class="fa-solid fa-people-line"></i>
                         <span class="title">Customers</span>
-                    </a>
+                    </div>
                 </li>
-                <li>
-                    <a href="">
+                <li sourceHTML="">
+                    <div>
                         <i class="fa-solid fa-envelope-open-text"></i>
                         <span class="title">Messages</span>
-                    </a>
+                    </div>
                 </li>
-                <li>
-                    <a href="">
+                <li sourceHTML="">
+                    <div>
                         <i class="fa-solid fa-circle-question"></i>
                         <span class="title">Help</span>
-                    </a>
+                    </div>
                 </li>
-                <li>
-                    <a href="">
+                <li sourceHTML="">
+                    <div>
                         <i class="fa-solid fa-gear"></i>
                         <span class="title">Setting</span>
-                    </a>
+                    </div>
                 </li>
-                <li>
-                    <a href="">
+                <li sourceHTML="">
+                    <div>
                         <i class="fa-solid fa-unlock-keyhole"></i>
                         <span class="title">Password</span>
-                    </a>
+                    </div>
                 </li>
-                <li>
-                    <a href="">
+                <li sourceHTML="">
+                    <div>
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         <span class="title">Sign out</span>
-                    </a>
+                    </div>
                 </li>
             </ul>
             <div class="toggle"></div>
@@ -76,10 +76,8 @@
         let toggleBtn = document.querySelector('.toggle');
         let findBox = document.querySelector(".Main .header .findBox input")
 
-        let refreshTest = document.getElementById('aa')
-
         window.onload = e => {
-            fetch('home.html')
+            fetch('./home.html')
                 .then(response => response.text())
                 .then(text => Main.innerHTML = text);
         }
@@ -89,11 +87,19 @@
             Main.classList.toggle("active");
         })
 
-        refreshTest.addEventListener('click', ()=>{
-            fetch('homa.html')
+
+        let navItems = document.querySelectorAll(".nav li");
+        console.log(navItems)
+        navItems.forEach(name => {
+            name.addEventListener('click', function (e) {
+                const pageName = this.getAttribute('sourceHTML');
+                fetch("./" + pageName)
                 .then(response => response.text())
                 .then(text => Main.innerHTML = text);
-        })
+
+                // console.log(this.getAttribute('sourceHTML'));
+            });
+        });
     </script>
 </body>
 
