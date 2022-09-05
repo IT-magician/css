@@ -490,13 +490,21 @@ $x1: 160px;
     }
 }
 
-@media only screen and (max-width: /*786*/1200px) {
-    
-    .Main .orderCnts {
-        grid-template-columns: repeat(2,1fr);
-        // grid-template-rows: 1fr 1fr; // 2:1
+@media only screen and (max-width: /*786*/ 1200px) {
+        .Main {
+            .orderCnts {
+                grid-template-columns: repeat(2, 1fr);
+                // grid-template-rows: 1fr 1fr; // 2:1
+            }
+
+
+            .details .recentOrders table tbody tr td:last-child {
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                padding: 5px;
+            }
+        }
     }
-}
 
 @media only screen and (max-width: 786px) {
     
