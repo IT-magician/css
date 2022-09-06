@@ -50,8 +50,10 @@ body {
         width: 25px;
         height: 5px;
         background-color: #4E92BA;
-        transform: translateY(-5px);
+        transform: translateY(-10px);
         transition: 1s;
+
+        box-shadow: 0 10px 0 #4E92BA;
     }
 
     .toggle::after {
@@ -60,7 +62,7 @@ body {
         width: 25px;
         height: 5px;
         background-color: #4E92BA;
-        transform: translateY(5px);
+        transform: translateY(10px);
         transition: 1s;
     }
 
@@ -150,11 +152,12 @@ body {
     border-radius: 20px;
 
     .toggle::before {
-        transform: translateY(0px) rotate(-405deg);
+        box-shadow: 0 0 0 #fff;
+        transform: translateY(0px) rotate(405deg);
     }
 
     .toggle::after {
-        transform: translateY(0px) rotate(225deg);
+        transform: translateY(0px) rotate(-405deg);
     }
 
 }
@@ -169,6 +172,41 @@ $x1: 160px;
 
     transition: 0.5s;
 
+
+    .contents{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .searchHome{
+        display: inline-block;
+        margin: auto;
+        padding: 5px;
+        cursor: pointer;
+
+        img{
+            width: 170px;
+        }
+
+        .buildingName{
+            font-weight: 400;
+            color: #A1A1A1;
+        }
+        .buildingPrice{
+            font-weight: 600;
+            color: #525252;;
+        }
+        .buildingPrice::before{
+            content: '₩ ';
+        }
+        .buildingPrice::after{
+            content: '만원';
+        }
+        .buildingPos{
+            color: #626262;;
+        }
+    }
 
     .header {
         // position: relative;
@@ -404,17 +442,18 @@ $x1: 160px;
                     font-size: 14px;
                     border-radius: 4px;
                     color: #fff;
-                }
-
-                .Popular_1 {
-                    background: #FA1A0B;
-                }
-
-                .Popular_2 {
                     background: #71ff9c;
                 }
 
-                .Popular_3 {
+                .Selling {
+                    background: #71ff9c;
+                }
+
+                .Sold {
+                    background: #FA1A0B;
+                }
+
+                .Reserved {
                     background: #FAF752;
                 }
             }

@@ -106,9 +106,42 @@
         }
 
         window.onload = e => {
-            fetch('./contents/dashboard.html')
+            // fetch('./contents/dashboard.html')
+            fetch('./contents/searchHome.html')
                 .then(response => response.text())
                 .then(text => contentBox.innerHTML = text);
+
+                // fetch('./contents/searchHomeClass.html')
+                // .then(response => response.text())
+                // .then(htmlStr => {
+                //     console.log(htmlStr )
+
+                //     let frag = document.createRange().createContextualFragment(htmlStr);
+                //     console.log(frag);
+                //     console.log(frag.querySelector('img'))
+                //     frag.querySelector('img').src = "img/CS타워.jfif"
+                //     contentBox.appendChild(frag)
+                // });
+
+            fetch('./contents/dashboardRowClass.html')
+                .then(response => response.text())
+                .then(htmlStr => {
+                    let tmp = document.createElement("tr")
+                    tmp.innerHTML = htmlStr
+
+                    console.log(tmp)
+
+                    tmp.cells[0].innerHTML="aaa"
+                    console.log(tmp.cells[0])
+
+                    
+                    tmp.cells[4].querySelector("span").classList.add("Selling")
+                    tmp.cells[4].querySelector("span").innerHTML="adfasfdfaa"
+                    console.log(tmp.cells[4])
+                    
+                    console.log(tmp)
+                });
+
 
             //sessionStorage.setItem("isSigned","True")
 
