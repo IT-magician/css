@@ -44,26 +44,18 @@ body {
         // box-shadow: 5px 5px rgba($color: #000000, $alpha: 0.055);
     }
 
-    .toggle::before {
-        content: '';
+    .toggle span{
         position: absolute;
         width: 25px;
         height: 5px;
         background-color: #4E92BA;
-        transform: translateY(-10px);
-        transition: 1s;
-
-        box-shadow: 0 10px 0 #4E92BA;
+        transition: .5s;
     }
-
-    .toggle::after {
-        content: '';
-        position: absolute;
-        width: 25px;
-        height: 5px;
-        background-color: #4E92BA;
+    .toggle span:nth-child(1){
+        transform: translateY(-10px);
+    }
+    .toggle span:nth-child(3){
         transform: translateY(10px);
-        transition: 1s;
     }
 
     ul {
@@ -151,15 +143,18 @@ body {
     width: 250px;
     border-radius: 20px;
 
-    .toggle::before {
-        box-shadow: 0 0 0 #fff;
-        transform: translateY(0px) rotate(405deg);
+    .toggle span:nth-child(1){
+        transform: translateY(0) rotate(405deg); // 360 + 45
     }
-
-    .toggle::after {
-        transform: translateY(0px) rotate(-405deg);
+    .toggle span:nth-child(2){
+        transform: translateY(-50px);
     }
-
+    .toggle span:nth-child(3){
+        transform: translateY(0) rotate(-405deg);
+    }
+    .toggle span:nth-child(4){
+        transform: translateY(50px);
+    }
 }
 
 $x1: 160px;
