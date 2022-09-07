@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 <head>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -11,17 +11,24 @@
 <body>
     <div class="container">
         <input type="checkbox" id="flip">
-        <div class="picture"></div>
+        <div class="picture">
+            <div class="frontImg">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/75/36/05/1000_F_375360571_4BIg1V4fxnaUomUdT7P9c8L6YHLk0zru.jpg" alt="">
+            </div>
+            <div class="backImg">
+                <img src="https://as2.ftcdn.net/v2/jpg/04/48/94/81/1000_F_448948148_AhaYD0JE5VaKKWOVMYwP7puJDMHm5nV4.jpg" alt="">
+            </div>
+        </div>
         
         <form class="signIn">
             <div class="title">Login</div>
             <div class="inputBox">
-                <i class="fa-regular fa-id-badge"></i>
                 <input type="text" placeholder="type your ID">
+                <i class="fa-regular fa-id-badge"></i>
             </div>
             <div class="inputBox">
-                <i class="fa-solid fa-key"></i>
                 <input type="password" placeholder="type your password">
+                <i class="fa-solid fa-key"></i>
             </div>
             <div class="text"><a href="">forgot password?</a></div>
             <div class="button input-box">
@@ -34,23 +41,26 @@
         <form class="signUp">
             <div class="title">Sign UP</div>
             <div class="inputBox">
-                <i class="fa-regular fa-pen-to-square"></i>
                 <input type="text" placeholder="type your name">
+                <i class="fa-regular fa-pen-to-square"></i>
             </div>
             <div class="inputBox">
-                <i class="fa-regular fa-id-badge"></i>
                 <input type="text" placeholder="type your ID">
+                <i class="fa-regular fa-id-badge"></i>
             </div>
             <div class="inputBox">
-                <i class="fa-solid fa-key"></i>
                 <input type="password" placeholder="type your password">
+                <i class="fa-solid fa-key"></i>
             </div>
             <div class="button input-box">
-                <i class="fa-solid fa-file-pen"></i>
                 <input type="submit" value="회원가입">
+                <i class="fa-solid fa-file-pen"></i>
             </div>
             <div class="text">Already have an account?<label for="flip">Login Now</label></div>
         </form>
+
+        
     </div>
+
 </body>
 </html>
