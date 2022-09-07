@@ -34,15 +34,22 @@ body {
 
         transition: all 1s ease;
 
-        .frontImg{
-            backface-visibility: hidden;
-        }
         img{
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+        }
+
+        
+        .frontImg{
+            backface-visibility: hidden;
+            z-index: 3;
+            
+        }
+        .backImg{
+            backface-visibility: hidden;
         }
     }
 
@@ -54,6 +61,10 @@ body {
         padding: 15px;
 
 
+
+        label{
+            cursor: pointer;
+        }
 
         div {
             margin: 10px;

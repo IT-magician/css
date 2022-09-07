@@ -53,6 +53,9 @@ body {
   width: 50%;
   padding: 15px;
 }
+.container form label {
+  cursor: pointer;
+}
 .container form div {
   margin: 10px;
 }
