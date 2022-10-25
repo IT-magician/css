@@ -47,9 +47,9 @@ body{
         width:20px;
         height:36px;
         opacity:0;
-        font-size: 2rem;
-        animation:move 2s linear infinite;
-        transform:rotate(180deg);
+        font-size: 1.5rem;
+        animation:move 1.5s linear infinite;
+        transform:rotate(-180deg);
         color:#35C4F0;
         animation-delay: calc(0.2s*var(--nth));
 
@@ -74,7 +74,7 @@ body{
             100%{
                 left: 100%;
                 opacity: 0;
-                transform:rotate(-180deg);
+                transform:rotate(180deg);
             }
         }
       }
