@@ -1,8 +1,24 @@
-body {
-  background: #000;
-  font-family: Helvetica, Arial, sans-serif;
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+}
+
+.container {
+  font-family: Helvetica, Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* 다크 모드에 적용할 스타일 정의 */
+  .container {
+    background: #000;
+  }
+}
 .loadBox {
   position: absolute;
   width: 600px;
@@ -54,26 +70,26 @@ body {
   width: 20px;
   height: 36px;
   opacity: 0;
-  font-size: 1.5rem;
-  -webkit-animation: move 2s linear infinite;
-          animation: move 2s linear infinite;
+  font-size: 3rem;
+  -webkit-animation: move 2.8s linear infinite;
+          animation: move 2.8s linear infinite;
   transform: rotate(-180deg);
   color: #35C4F0;
-  -webkit-animation-delay: calc(0.25s * var(--nth));
-          animation-delay: calc(0.25s * var(--nth));
+  -webkit-animation-delay: calc(0.2s * var(--nth));
+          animation-delay: calc(0.2s * var(--nth));
 }
 @-webkit-keyframes move {
   0% {
     left: 0;
     opacity: 0;
   }
-  35% {
-    left: 41%;
+  20% {
+    left: 20%;
     opacity: 1;
     transform: rotate(0deg);
   }
-  65% {
-    left: 59%;
+  85% {
+    left: 80%;
     transform: rotate(0deg);
   }
   100% {
@@ -87,13 +103,13 @@ body {
     left: 0;
     opacity: 0;
   }
-  35% {
-    left: 41%;
+  20% {
+    left: 20%;
     opacity: 1;
     transform: rotate(0deg);
   }
-  65% {
-    left: 59%;
+  85% {
+    left: 80%;
     transform: rotate(0deg);
   }
   100% {
