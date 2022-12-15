@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+
+body {
+    background-color: #000;
+}
+
+.card {
+    position: relative;
+    width: 750px;
+    height: 500px;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 1.5rem;
+
+    border-style: solid;
+    border-color: #005C53;
+    border-radius: 1px;
+    border-width: 10px;
+
+    background: #000;
+
+    margin: 3rem auto;
+}
+
+#snow {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/807677/snow1.png'),
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/807677/snow2.png'),
+        url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/807677/snow3.png');
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    animation: snow 10s linear infinite;
+}
+
+.word {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    font-family: 'Open Sans', sans-serif;
+    margin: 1rem;
+
+    color: #D6D58E;
+
+    .word-title {
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+
+    .copyright {
+        font-size: .25rem;
+    }
+}
+
+
+
+
+svg {
+    position: relative;
+    max-width: 85%;
+    max-height: 85%;
+
+    & path {
+        fill-opacity: 0;
+        stroke: #29882F;
+        stroke-width: 20;
+        stroke-dasharray: 85;
+        stroke-dashoffset: 1000;
+        animation: draw 1s infinite linear;
+    }
+}
+
+#star {
+    animation: star-morph 3s infinite linear;
+
+}
+
+.red {
+    animation: color-morph 3s infinite linear;
+}
+
+.yellow {
+    animation: color-morph 3s infinite linear;
+    animation-delay: 1s;
+}
+
+.blue {
+    animation: color-morph 3s infinite linear;
+    animation-delay: 2s;
+}
+
+@keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+
+    50% {
+        background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+
+    100% {
+        background-position: 500px 1000px, 200px 400px, -100px 300px;
+    }
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes star-morph {
+
+    0%,
+    100% {
+        filter: drop-shadow(1px 0px 50px #fff503);
+    }
+
+    50% {
+        filter: drop-shadow(1px 0px 0px #fff503);
+    }
+}
+
+@keyframes color-morph {
+    0% {
+        fill: #EFF119
+    }
+
+    33% {
+        fill: #C30E0E
+    }
+
+    66% {
+        fill: #168BAF
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .card {
+        width: 500px;
+        height: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .word {
+        width: 500px;
+        justify-content: center;
+    }
+}
